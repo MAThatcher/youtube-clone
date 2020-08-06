@@ -5,9 +5,17 @@ import youtube from './api/youtube'
 
 class App extends React.Component {
     state = {
-        video: [],
+        videos: [],
         selectedVideo:null
     }
+    componentDidMount(){
+        // this.handleSubmit('Build a youtube Clone application using react')
+    }
+
+    onVideoSelect = (video) => {
+        this.setState({selectedVideo:video})
+    }
+
     handleSubmit= async(searchTerm) => {
         const response = await youtube.get('search', {
             params: {
@@ -22,21 +30,22 @@ class App extends React.Component {
     }
     render(){
         const {selectedVideo} = this.state
+        const {videos} = this.state
         return(
-            <Grid justify="center" container spacing={10}>
+            <Grid container justify="center" spacing={10}>
                 <Grid item xs={12}>
                     <Grid container spacing={10}>
                         
-                        <Grid item sx={12}>
+                        <Grid item xs={12}>
                             <SearchBar onFormSubmit={this.handleSubmit}/>
                         </Grid>
 
-                        <Grid item sx={8}>
+                        <Grid item xs={8}>
                             <VideoDetail video={selectedVideo}/>
                         </Grid>
 
-                        <Grid item sx={4}>
-                            <VideoList/>
+                        <Grid item xs={4}>
+                            <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
                         </Grid>
 
                     </Grid>
