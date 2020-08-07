@@ -9,7 +9,7 @@ class App extends React.Component {
         selectedVideo:null
     }
     componentDidMount(){
-        // this.handleSubmit('Build a youtube Clone application using react')
+        this.handleSubmit('Youtube Rewind 2018')
     }
 
     onVideoSelect = (video) => {
