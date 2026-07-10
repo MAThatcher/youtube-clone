@@ -7,7 +7,7 @@ const VideoList = ({videos, onVideoSelect}) => {
     return (
         <Grid containter spacing={6}>
             {listOfVideos}
-        </Grid> 
+        </Grid>
     )}
 
 export default VideoList
