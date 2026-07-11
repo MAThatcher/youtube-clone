@@ -35,7 +35,7 @@ class App extends React.Component {
             <Grid container justify="center" spacing={10}>
                 <Grid item xs={12}>
                     <Grid container spacing={10}>
-                        
+
                         <Grid item xs={12}>
                             <SearchBar onFormSubmit={this.handleSubmit}/>
                         </Grid>
